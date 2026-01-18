@@ -1,0 +1,1623 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "type": 3,
+      "title": "Cloud Commander",
+      "description": "Cloud Commander is a file manager. It includes a command-line console and a text editor. Cloud Commander helps you work with files and directories.",
+      "note": "Deploys Cloud Commander. <a href=\"https://cloudcmd.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a>",
+      "categories": [
+        "Backup",
+        "Automation"
+      ],
+      "platform": "linux",
+      "logo": "https://cloudcmd.io/img/logo/cloudcmd.png",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/cloudcmd/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PASSWORD",
+          "label": "Password",
+          "description": "Password for the web UI user",
+          "default": ""
+        },
+        {
+          "name": "USERNAME",
+          "label": "Username",
+          "description": "Username for the web UI",
+          "default": ""
+        },
+        {
+          "name": "BASE_DIR",
+          "label": "URL base path",
+          "description": "Base URL path when served behind a reverse proxy (e.g., /cloudcmd). Use / for root.",
+          "default": "/"
+        },
+        {
+          "name": "THEME",
+          "label": "Theme",
+          "description": "Set theme: \"light\" or \"dark\"",
+          "default": "dark"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "type": 3,
+      "title": "Duplicati",
+      "description": "Duplicati is a backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
+      "note": "Deploys Duplicati. <a href=\"https://docs.duplicati.com\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a>",
+      "categories": [
+        "Backup",
+        "Automation"
+      ],
+      "platform": "linux",
+      "logo": "https://framerusercontent.com/images/LezF3gmqYkyAgrNprSShLYIsw.png?scale-down-to=128",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/duplicati/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "PASSWORD",
+          "label": "Password",
+          "description": "Password for Web Site user",
+          "default": ""
+        },
+        {
+          "name": "HOSTNAME",
+          "label": "Domain name",
+          "description": "Domain name for site",
+          "default": "test.com"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "type": 3,
+      "title": "FTP/FTPS Server",
+      "description": "Flexible FTP/FTPS server based on vsftpd (delfer/alpine-ftp-server).",
+      "note": "Deploys FTP server with passive mode.<br><br><strong>FTPS:</strong><br>&nbsp;&nbsp;- To enable TLS, specify a valid NPM directory name for the certificate and key (see the guide in our <a href=\"https://unihost.com/help/\" target=\"_blank\" rel=\"noopener noreferrer\">knowledge base</a>).<br>&nbsp;&nbsp;- Without them, server runs in plain FTP mode.<br><br><a href=\"https://github.com/delfer/docker-alpine-ftp-server\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a>",
+      "categories": [
+        "Storage",
+        "Networking"
+      ],
+      "platform": "linux",
+      "logo": "https://cdn-icons-png.flaticon.com/512/1707/1707595.png",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/ftp/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "FTP_USER",
+          "label": "FTP Username",
+          "description": "Login for the FTP user",
+          "default": ""
+        },
+        {
+          "name": "FTP_PASS",
+          "label": "FTP Password",
+          "description": "Password for the FTP user",
+          "default": ""
+        },
+        {
+          "name": "FTP_ADDRESS",
+          "label": "External ADDRESS",
+          "description": "Public hostname/IP for passive FTP",
+          "default": ""
+        },
+        {
+          "name": "NPM_PROXY_HOST_CERT_DIR",
+          "label": "NPM Proxy host",
+          "description": "NPM Directory containing TLS certificate files",
+          "default": "npm-"
+        },
+        {
+          "name": "FTP_PORT_START",
+          "label": "Passive Mode Port Start",
+          "description": "Start of passive port range",
+          "default": "21000"
+        },
+        {
+          "name": "FTP_PORT_END",
+          "label": "Passive Mode Port End",
+          "description": "End of passive port range",
+          "default": "21010"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "type": 3,
+      "title": "Gatus",
+      "description": "Create automated status pages with real-time uptime monitoring. Detect website and API downtime before your users do.",
+      "note": "Gatus is a developer-oriented health dashboard that gives you the ability to monitor your services using HTTP, ICMP, TCP, and even DNS queries as well as evaluate the result of said queries by using a list of conditions on values like the status code, the response time, the certificate expiration, the body and many others. The icing on top is that each of these health checks can be paired with alerting via Slack, Teams, PagerDuty, Discord, Twilio and many more.. <a href='https://github.com/TwiN/gatus' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "Automation",
+        "Monitoring"
+      ],
+      "platform": "linux",
+      "logo": "https://gatus.io/img/logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/gatus/docker-compose.yml"
+      },
+      "env": [],
+      "id": 4
+    },
+    {
+      "type": 3,
+      "title": "Ghost CMS",
+      "description": "Modern publishing platform (requires MySQL database).",
+      "note": "Deploys Ghost CMS. Requires external MySQL database. Create database and user before deployment. <a href=\"https://ghost.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a>",
+      "categories": [
+        "CMS",
+        "Blog"
+      ],
+      "platform": "linux",
+      "logo": "https://ghost.org/favicon.png",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/ghost/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DB_HOST",
+          "label": "Database Host",
+          "description": "MySQL database hostname",
+          "default": "mariadb"
+        },
+        {
+          "name": "DB_NAME",
+          "label": "Database Name (create in PHPMyAdmin)",
+          "description": "MySQL database name",
+          "default": "ghost"
+        },
+        {
+          "name": "DB_USER",
+          "label": "Database User (create in PHPMyAdmin)",
+          "description": "MySQL database username",
+          "default": ""
+        },
+        {
+          "name": "DB_PASSWORD",
+          "label": "Database User Password",
+          "description": "MySQL database user password (must contains word and numbers)",
+          "default": ""
+        },
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "Database root User Password",
+          "description": "MySQL database root user password",
+          "default": ""
+        },
+        {
+          "name": "GHOST_URL",
+          "label": "Ghost URL",
+          "description": "Full URL where Ghost will be accessible (e.g., https://blog.yourdomain.com)",
+          "default": "http://localhost:2368"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "type": 3,
+      "title": "Mailu",
+      "description": "Mailu is a simple yet full-featured mail server with Antispam and Antivirus system.",
+      "note": "You can find all configuration docks by this link ->  <a href='https://mailu.io/2024.06/configuration.html#common-configuration' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "CMS",
+        "Automation",
+        "E-mail"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/Mailu/Mailu/master/docs/assets/logomarkv2.png",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/mailu/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Main mail domain",
+          "description": "",
+          "default": "test.com"
+        },
+        {
+          "name": "HOSTNAMES",
+          "label": "Hostnames for this server, separated with commas",
+          "description": "",
+          "default": "mail.test.com"
+        },
+        {
+          "name": "POSTMASTER",
+          "label": "Postmaster local part (will append the main mail domain, example admin@test.com)",
+          "description": "",
+          "default": "admin"
+        },
+        {
+          "name": "SECRET_KEY",
+          "label": "Set to a randomly generated 16 bytes string (openssl rand -hex 16)",
+          "description": "",
+          "default": ""
+        },
+        {
+          "name": "INITIAL_ADMIN_ACCOUNT",
+          "label": "Administrator email name (example admin@test.com)",
+          "description": "",
+          "default": "admin"
+        },
+        {
+          "name": "INITIAL_ADMIN_DOMAIN",
+          "label": "Administrator email domain name (example admin@test.com)",
+          "description": "",
+          "default": "test.com"
+        },
+        {
+          "name": "INITIAL_ADMIN_PW",
+          "label": "Administrator password",
+          "description": "",
+          "default": ""
+        },
+        {
+          "name": "TLS_FLAVOR",
+          "label": "Choose how secure connections will behave (value: letsencrypt, cert, notls)",
+          "description": "https://mailu.io/2024.06/compose/setup.html#tls-certificates",
+          "select": [
+            {
+              "text": "No SSL",
+              "value": "notls"
+            },
+            {
+              "text": "Letsencrypt",
+              "value": "letsencrypt",
+              "default": true
+            },
+            {
+              "text": "Manual install SSL Certificate",
+              "value": "cert"
+            }
+          ]
+        },
+        {
+          "name": "FRONT_ADDRESS",
+          "label": "Choose how secure connections will behave for webmail",
+          "description": "",
+          "select": [
+            {
+              "text": "Letsencrypt",
+              "value": "tls://front",
+              "default": true
+            },
+            {
+              "text": "No SSL",
+              "value": "front"
+            }
+          ]
+        },
+        {
+          "name": "WEBROOT_REDIRECT",
+          "label": "Choose how secure connections will behave (value: none, yes)",
+          "description": "",
+          "select": [
+            {
+              "text": "Mailu behind NPM",
+              "value": "none",
+              "default": true
+            },
+            {
+              "text": "Mailu as front",
+              "value": "yes"
+            }
+          ]
+        },
+        {
+          "name": "DISABLE_STATISTICS",
+          "label": "Opt-out of statistics, replace with True to opt out",
+          "description": "",
+          "select": [
+            {
+              "text": "True",
+              "value": "True",
+              "default": true
+            },
+            {
+              "text": "False",
+              "value": "False"
+            }
+          ]
+        },
+        {
+          "name": "ADMIN",
+          "label": "Expose the admin interface (value: true, false)",
+          "description": "The admin interface is the main Mailu-specific bit, it provides tools to manage your email domains, users, etc.",
+          "select": [
+            {
+              "text": "True",
+              "value": "true",
+              "default": true
+            },
+            {
+              "text": "False",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "name": "API",
+          "label": "Expose the API interface (value: true, false)",
+          "description": "The API interface is a RESTful API for changing the Mailu configuration. Anything that can be configured via the Mailu web administration interface, can also be configured via the RESTful API. For enabling the API, an API token must be configured. It is not possible to use the API without an API token.",
+          "select": [
+            {
+              "text": "False",
+              "value": "false",
+              "default": true
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "name": "WEBDAV",
+          "label": "Dav server implementation (value: radicale, none).",
+          "description": "",
+          "select": [
+            {
+              "text": "None",
+              "value": "none",
+              "default": true
+            },
+            {
+              "text": "Radicale",
+              "value": "radicale"
+            }
+          ]
+        },
+        {
+          "name": "ANTIVIRUS",
+          "label": "Antivirus solution (value: clamav, none).",
+          "description": "An antivirus server helps fighting large scale virus spreading campaigns that leverage e-mail for initial infection. Make sure that you have at least 1GB of memory for ClamAV to load its signature database.",
+          "select": [
+            {
+              "text": "ClamAV",
+              "value": "clamav",
+              "default": true
+            },
+            {
+              "text": "None",
+              "value": "none"
+            }
+          ]
+        },
+        {
+          "name": "WEBMAIL",
+          "label": "Choose which webmail to run if any (values: roundcube, snappymail, none).",
+          "description": "",
+          "select": [
+            {
+              "text": "Roundcube",
+              "value": "roundcube",
+              "default": true
+            },
+            {
+              "text": "None",
+              "value": "none"
+            }
+          ]
+        },
+        {
+          "name": "SCAN_MACROS",
+          "label": "Scan Macros solution (value: true, false).",
+          "description": "",
+          "select": [
+            {
+              "text": "False",
+              "value": "false",
+              "default": true
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "name": "FETCHMAIL_ENABLED",
+          "label": "Enable fetchmail",
+          "description": "",
+          "select": [
+            {
+              "text": "True",
+              "value": "True",
+              "default": true
+            },
+            {
+              "text": "False",
+              "value": "False"
+            }
+          ]
+        },
+        {
+          "name": "FETCHMAIL_DELAY",
+          "label": "Fetchmail delay",
+          "description": "",
+          "default": "600"
+        },
+        {
+          "name": "MESSAGE_SIZE_LIMIT",
+          "label": "Message size limit in bytes (Default: accept messages up to 50MB)",
+          "description": "",
+          "default": "50000000"
+        },
+        {
+          "name": "MESSAGE_RATELIMIT",
+          "label": "Message rate limit (per user in one day)",
+          "description": "",
+          "default": "10000"
+        },
+        {
+          "name": "DEFAULT_SPAM_THRESHOLD",
+          "label": "Default spam threshold used for new users",
+          "description": "",
+          "default": "80"
+        },
+        {
+          "name": "AUTH_RATELIMIT_IP",
+          "label": "Authentication rate limit per IP (per /24 on ipv4 and /48 on ipv6)",
+          "description": "",
+          "default": "5 per hour"
+        },
+        {
+          "name": "AUTH_RATELIMIT_USER",
+          "label": "Authentication rate limit per user (regardless of the source-IP)",
+          "description": "",
+          "default": "50 per day"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone for the Mailu containers.",
+          "description": "",
+          "default": "Etc/UTC"
+        },
+        {
+          "name": "WEBROOT_REDIRECT",
+          "label": "Path to redirect / to",
+          "description": "",
+          "default": "/admin"
+        },
+        {
+          "name": "WEB_ADMIN",
+          "label": "Path to the admin interface",
+          "description": "",
+          "default": "/admin"
+        },
+        {
+          "name": "WEB_WEBMAIL",
+          "label": "Path to the webmail",
+          "description": "",
+          "default": "/webmail"
+        },
+        {
+          "name": "WEB_API",
+          "label": "Path to the API interface if enabled",
+          "description": "",
+          "default": "/api"
+        },
+        {
+          "name": "CREDENTIAL_ROUNDS",
+          "label": "Number of rounds used by the password hashing scheme",
+          "description": "",
+          "default": "12"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "type": 3,
+      "title": "MariaDB with phpMyAdmin",
+      "description": "MariaDB database server with phpMyAdmin web interface",
+      "note": "Deploys MariaDB with phpMyAdmin on port 8080. Set MYSQL_ROOT_PASSWORD environment variable. MariaDB is only accessible via 'databases' network.",
+      "categories": [
+        "Database"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/MariaDB_colour_logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/mariadb/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "MySQL Root Password",
+          "description": "Password for the MariaDB root user",
+          "default": ""
+        }
+      ],
+      "id": 7
+    },
+    {
+      "type": 3,
+      "title": "Minio S3",
+      "description": "High-performance object storage server compatible with Amazon S3 API.",
+      "note": "Deploys Minio S3-compatible object storage. API on port 9000, Console on port 9001. <a href=\"https://docs.min.io/community/minio-object-store/\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a>",
+      "categories": [
+        "Storage"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/minio/minio/master/.github/logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/minio/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "MINIO_ROOT_USER",
+          "label": "Minio Root User",
+          "description": "Username for Minio admin access (minimum 3 characters)",
+          "default": "minioadmin"
+        },
+        {
+          "name": "MINIO_ROOT_PASSWORD",
+          "label": "Minio Root Password",
+          "description": "Password for Minio admin access (minimum 8 characters)",
+          "default": ""
+        }
+      ],
+      "id": 8
+    },
+    {
+      "type": 3,
+      "title": "MongoDB with Mongo Express",
+      "description": "MongoDB database server with Mongo Express web interface",
+      "note": "Deploys MongoDB with Mongo Express web interface. Set MONGO_ROOT_PASSWORD environment variable. MongoDB is only accessible via 'databases' network",
+      "categories": [
+        "Database"
+      ],
+      "platform": "linux",
+      "logo": "https://www.mongodb.com/assets/images/global/favicon.ico",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/mongodb/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "MONGO_ROOT_PASSWORD",
+          "label": "MongoDB Root Password",
+          "description": "Password for the MongoDB root user",
+          "default": ""
+        },
+        {
+          "name": "ME_CONFIG_BASICAUTH_USERNAME",
+          "label": "mongo-express login user",
+          "description": "Username for logging into the MongoDB management",
+          "default": ""
+        },
+        {
+          "name": "ME_CONFIG_BASICAUTH_PASSWORD",
+          "label": "mongo-express login password",
+          "description": "Password for logging into the MongoDB management",
+          "default": ""
+        }
+      ],
+      "id": 9
+    },
+    {
+      "type": 3,
+      "title": "n8n",
+      "description": "n8n - Flexible AI workflow automation for technical teams",
+      "note": "Deploys n8n.  <a href=\"https://docs.n8n.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a><br><br><strong>Requirements:</strong><br>&nbsp;&nbsp;- Existing PostgreSQL database server reachable on the <code>databases</code> network.<br>&nbsp;&nbsp;- Admin credentials are used ONCE by db-init to create the role/DB if missing and to grant privileges (idempotent).<br><strong>Encryption key:</strong><br>&nbsp;&nbsp;- Purpose: encrypts credentials/secrets at rest, keep it private. Changing it later will make existing credentials unreadable.<br>&nbsp;&nbsp;- Paste the generated Base64 string as the value of <code>Encryption key</code> (recommended length: 48 bytes =&gt; ~64 Base64 chars).<br>&nbsp;&nbsp;- Generate on Linux/macOS: <code>openssl rand -base64 48</code><br>&nbsp;&nbsp;- Online generator (use at your own risk, offline generation is recommended): <a href=\"https://www.terrific.tools/online/openssl-password-generator\" target=\"_blank\" rel=\"noopener noreferrer\">terrific.tools — OpenSSL Password Generator</a>",
+      "categories": [
+        "AI",
+        "Automation"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/N8n-logo-new.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/n8n/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN_NAME",
+          "label": "Public domain",
+          "description": "Public hostname for n8n (no path). Example: n8n.example.com",
+          "default": ""
+        },
+        {
+          "name": "N8N_ENCRYPTION_KEY",
+          "label": "Encryption key",
+          "description": "Long random secret for encrypting credentials (required). Example: <code>openssl rand -base64 48</code>",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "Database name",
+          "description": "Target n8n database. Will be created by db-init if missing.",
+          "default": "n8n"
+        },
+        {
+          "name": "POSTGRES_USER",
+          "label": "n8n DB user",
+          "description": "Database user for n8n. Will be created by db-init if missing.",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "n8n DB password",
+          "description": "Password of the n8n DB user (used by n8n and created by db-init if missing)",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_ADMIN_USER",
+          "label": "PostgreSQL admin user (bootstrap)",
+          "description": "Superuser or a role with CREATE ROLE/CREATE DB/GRANT to bootstrap once",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_ADMIN_PASSWORD",
+          "label": "PostgreSQL admin password (bootstrap)",
+          "description": "Admin password used ONLY by db-init to bootstrap (n8n itself will NOT use it)",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_HOST",
+          "label": "PostgreSQL host",
+          "description": "DNS name/alias of the existing PostgreSQL within the external 'databases' network",
+          "default": "postgres"
+        },
+        {
+          "name": "N8N_PROTOCOL",
+          "label": "Public protocol",
+          "description": "https or http. If http, consider N8N_SECURE_COOKIE=false (see note).",
+          "default": "https"
+        },
+        {
+          "name": "POSTGRES_PORT",
+          "label": "PostgreSQL port",
+          "description": "PostgreSQL TCP port",
+          "default": "5432"
+        },
+        {
+          "name": "TIMEZONE",
+          "label": "Timezone",
+          "description": "Application timezone",
+          "default": "Europe/London"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "type": 3,
+      "title": "NetData",
+      "description": "Netdata is an open-source, real-time infrastructure monitoring platform. Monitor, detect, and act across your entire infrastructure.",
+      "note": "Netdata is the most energy-efficient tool for monitoring Docker-based systems. The study also shows Netdata excels in CPU usage, RAM usage, and execution time compared to other monitoring solutions. <a href='https://github.com/netdata/netdata' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "Automation",
+        "Monitoring"
+      ],
+      "platform": "linux",
+      "logo": "https://github.com/netdata/blog/blob/master/static/img/logo600x600.png?raw=true",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/netdata/docker-compose.yml"
+      },
+      "env": [],
+      "id": 11
+    },
+    {
+      "type": 3,
+      "title": "Nginx Proxy Manager",
+      "description": "Expose your services to your domain",
+      "note": "Allows to open web serices to external ports. <a href='https://nginxproxymanager.com/setup/' target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "Proxy",
+        "Networking"
+      ],
+      "platform": "linux",
+      "logo": "https://nginxproxymanager.com/logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/nginx-proxy-manager/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "INITIAL_ADMIN_EMAIL",
+          "label": "Initial login email",
+          "description": "Email to use during first setup",
+          "default": ""
+        },
+        {
+          "name": "INITIAL_ADMIN_PASSWORD",
+          "label": "Initial login password",
+          "description": "Password to use during first setup",
+          "default": ""
+        }
+      ],
+      "id": 12
+    },
+    {
+      "type": 3,
+      "title": "Odoo",
+      "description": "Open-source suite of business management software tools, often referred to as an ERP (Enterprise Resource Planning) system. It provides a wide range of integrated applications to manage various business processes, such as accounting, inventory, sales, customer relationship management (CRM), human resources, manufacturing, e-commerce, and more. Odoo is highly customizable, modular, and designed to be flexible for businesses of all sizes, from small startups to large enterprises.",
+      "note": "Default login credentials: user -  admin , password - admin . <a href='https://www.odoo.com/page/docs' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Also you can read official documentation if you want some custom twiks</a>",
+      "categories": [
+        "Automation",
+        "CRM"
+      ],
+      "platform": "linux",
+      "logo": "https://odoocdn.com/openerp_website/static/src/img/2016/logos/odoo_logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/odoo/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "POSTGRES_USER",
+          "label": "User name for Postgres DB",
+          "description": "",
+          "default": "odoo"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Password from Postgres DB",
+          "description": "",
+          "default": "NfzWJlo6hmiSU0"
+        }
+      ],
+      "id": 13
+    },
+    {
+      "type": 3,
+      "title": "Ollama AI",
+      "description": "Ollama is a tool and runtime for running large language models (LLMs) locally on your own server.",
+      "note": "<strong>Usage:</strong><br>&nbsp;&nbsp;- Choose a model to pre-pull on deploy (or specify a custom tag).<br>&nbsp;&nbsp;- Models catalog: <a href=\"https://ollama.com/library\" target=\"_blank\" rel=\"noopener noreferrer\">ollama.com/library</a><br><br><strong>CPU-only:</strong><br>&nbsp;&nbsp;- Works out of the box. No extra settings needed.<br><br><strong>GPU (NVIDIA):</strong><br>&nbsp;&nbsp;- Ensure NVIDIA drivers + nvidia-container-toolkit are installed on the host.<br>&nbsp;&nbsp;- Then add GPU flags to the service (see compose comment in the stack for an example).<br><br><strong>n8n:</strong><br>&nbsp;&nbsp;- Point your n8n agent/tools to the Ollama API at <code>http://ollama:11434</code> (or via your reverse proxy).",
+      "categories": [
+        "AI"
+      ],
+      "platform": "linux",
+      "logo": "https://ollama.com/public/ollama.png",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/ollama/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "OLLAMA_MODEL_PRESET",
+          "label": "Model (preset)",
+          "description": "Select a model to pre-pull on deploy. For more models see: https://ollama.com/library",
+          "select": [
+            {
+              "text": "— Select a model —",
+              "value": "UNSET",
+              "default": true
+            },
+            {
+              "text": "TinyLlama Latest (very light)",
+              "value": "tinyllama:latest"
+            },
+            {
+              "text": "Qwen3 Latest",
+              "value": "qwen3:latest"
+            },
+            {
+              "text": "Gemma3 Latest",
+              "value": "gemma3:latest"
+            },
+            {
+              "text": "Mistral Latest",
+              "value": "mistral:latest"
+            },
+            {
+              "text": "DeepSeek-R1 Latest",
+              "value": "deepseek-r1:latest"
+            },
+            {
+              "text": "Phi-4-mini Latest",
+              "value": "phi4-mini:latest"
+            },
+            {
+              "text": "Custom (set below)",
+              "value": "CUSTOM"
+            }
+          ]
+        },
+        {
+          "name": "OLLAMA_MODEL_CUSTOM",
+          "label": "Custom model tag (optional)",
+          "description": "If preset is 'Custom', put a full tag here (e.g., 'llava:13b' or 'gemma:2b-instruct'). See: https://ollama.com/library",
+          "default": "NOT_SET"
+        }
+      ],
+      "id": 14
+    },
+    {
+      "type": 3,
+      "title": "OpenProject",
+      "description": "Use OpenProject to manage your projects, tasks and goals.",
+      "note": "Default login credentials: user -  admin , password - admin . <a href='https://www.openproject.org/docs/' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Also you can read official documentation if you want some custom twiks</a>",
+      "categories": [
+        "Automation",
+        "Task Manager"
+      ],
+      "platform": "linux",
+      "logo": "https://www.openproject.org/assets/images/press/openproject-icon-white-blue-background-e86e5cd0.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/openproject/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "OPENPROJECT_HOST__NAME",
+          "label": "Domain name",
+          "description": "Domain name",
+          "default": "myopenproject.com"
+        },
+        {
+          "name": "OPENPROJECT_SECRET_KEY_BASE",
+          "label": "Secret key",
+          "description": "Secret key",
+          "default": "NfzWJlo6hmiSU04SFrdgpRQyJJFBy1qJ"
+        }
+      ],
+      "id": 15
+    },
+    {
+      "type": 3,
+      "title": "OpenVPN with Web UI",
+      "description": "OpenVPN server with web-based management interface",
+      "note": "Deploys OpenVPN server with web UI for user management. Web UI accessible via web network. VPN port customizable. <a href='https://github.com/shuricksumy/openvpn-ui' target='_blank' rel='noopener noreferrer'>Original source</a> ",
+      "categories": [
+        "VPN",
+        "Security"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f5/OpenVPN_logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/openvpn/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "OPENVPN_PORT",
+          "label": "OpenVPN Port",
+          "description": "UDP port for OpenVPN server (default 1194)",
+          "default": "1194"
+        },
+        {
+          "name": "ADMIN_USERNAME",
+          "label": "Web UI Admin Username",
+          "description": "Username for OpenVPN web interface",
+          "default": "admin"
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Web UI Admin Password",
+          "description": "Password for OpenVPN web interface",
+          "default": ""
+        },
+        {
+          "name": "URL_PREFIX",
+          "label": "Web UI URL prefix",
+          "description": "Web UI URL prefix for OpenVPN web interface",
+          "default": "/openvpn"
+        }
+      ],
+      "id": 16
+    },
+    {
+      "type": 3,
+      "title": "Outline Wiki",
+      "description": "Modern team knowledge base and wiki (requires PostgreSQL database and Redis).",
+      "note": "Deploys Outline Wiki. Requires external PostgreSQL database and Redis instance. Must configure SMTP, required for invites and log-in. <a href='https://docs.getoutline.com/' target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "Collaboration",
+        "Documentation"
+      ],
+      "platform": "linux",
+      "logo": "https://www.getoutline.com/images/logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/outline/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "POSTGRES_HOST",
+          "label": "Database Host",
+          "description": "PostgreSQL database hostname",
+          "default": "postgres"
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "Database Name",
+          "description": "PostgreSQL database name",
+          "default": "outline"
+        },
+        {
+          "name": "POSTGRES_USER",
+          "label": "Database User",
+          "description": "PostgreSQL database username",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Database Password",
+          "description": "PostgreSQL database password",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_PORT",
+          "label": "Database Port",
+          "description": "PostgreSQL database port",
+          "default": "5432"
+        },
+        {
+          "name": "POSTGRES_ADMIN_USER",
+          "label": "Database Admin User",
+          "description": "PostgreSQL database admin username",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_ADMIN_PASSWORD",
+          "label": "Database Admin Password",
+          "description": "PostgreSQL database admin password",
+          "default": ""
+        },
+        {
+          "name": "REDIS_HOST",
+          "label": "Redis Host",
+          "description": "Redis server hostname",
+          "default": "redis"
+        },
+        {
+          "name": "REDIS_PASSWORD",
+          "label": "Redis Password",
+          "description": "Redis server password",
+          "default": ""
+        },
+        {
+          "name": "SECRET_KEY",
+          "label": "Secret Key (openssl rand -hex 32)",
+          "description": "Secret key for Outline (generate a random 32+ character string)",
+          "default": ""
+        },
+        {
+          "name": "UTILS_SECRET",
+          "label": "Utils Secret (openssl rand -hex 32)",
+          "description": "Utils secret for Outline (generate a random 32+ character string)",
+          "default": ""
+        },
+        {
+          "name": "OUTLINE_URL",
+          "label": "Outline URL",
+          "description": "Full URL where Outline will be accessible (e.g., https://wiki.yourdomain.com)",
+          "default": "http://localhost:3000"
+        },
+        {
+          "name": "SMTP_HOST",
+          "label": "SMTP Host",
+          "description": "SMTP server hostname for email notifications",
+          "default": ""
+        },
+        {
+          "name": "SMTP_PORT",
+          "label": "SMTP Port",
+          "description": "SMTP server port (usually 587 or 465)",
+          "default": "587"
+        },
+        {
+          "name": "SMTP_USERNAME",
+          "label": "SMTP Username",
+          "description": "SMTP authentication username",
+          "default": ""
+        },
+        {
+          "name": "SMTP_PASSWORD",
+          "label": "SMTP Password",
+          "description": "SMTP authentication password",
+          "default": ""
+        },
+        {
+          "name": "SMTP_FROM_EMAIL",
+          "label": "SMTP From Email",
+          "description": "Email address for outgoing notifications",
+          "default": ""
+        }
+      ],
+      "id": 17
+    },
+    {
+      "type": 3,
+      "title": "PostgreSQL with Adminer",
+      "description": "PostgreSQL database server with Adminer web interface",
+      "note": "Deploys PostgreSQL with adminer on port 8080. Set POSTGRES_PASSWORD environment variable. PostgreSQL is only accessible via shared-network.",
+      "categories": [
+        "Database"
+      ],
+      "platform": "linux",
+      "logo": "https://wiki.postgresql.org/images/a/a4/PostgreSQL_logo.3colors.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/postgres/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "PostgreSQL Password",
+          "description": "Password for the PostgreSQL user",
+          "default": ""
+        },
+        {
+          "name": "POSTGRES_USER",
+          "label": "PostgreSQL User",
+          "description": "PostgreSQL username",
+          "default": "postgres"
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "PostgreSQL Database",
+          "description": "Default database name",
+          "default": "postgres"
+        },
+        {
+          "name": "POSTGRES_TAG",
+          "label": "PostgreSQL version",
+          "description": "Docker image tag for PostgreSQL (e.g. 16, 15-alpine, 14).",
+          "default": "latest"
+        }
+      ],
+      "id": 18
+    },
+    {
+      "type": 3,
+      "title": "Redis with Redis Commander",
+      "description": "Redis in-memory data store with Redis Commander web interface.",
+      "note": "Deploys Redis with Redis Commander web interface. Redis is only accessible via 'databases' network. <a href='https://redis.io/docs/latest/' target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "Database"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Redis_logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/redis/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "REDIS_PASSWORD",
+          "label": "Redis Password",
+          "description": "Password for Redis authentication",
+          "default": ""
+        },
+        {
+          "name": "HTTP_USER",
+          "label": "redis commander login user",
+          "description": "Username for logging into the MongoDB management",
+          "default": ""
+        },
+        {
+          "name": "HTTP_PASSWORD",
+          "label": "redis commander login password",
+          "description": "Password for logging into the Redis management",
+          "default": ""
+        }
+      ],
+      "id": 19
+    },
+    {
+      "type": 3,
+      "title": "Rocket.Chat",
+      "description": "Open-source team communications platform (deployed with own MongoDB with replica set)",
+      "note": "Deploys Rocket.Chat.",
+      "categories": [
+        "Communication",
+        "Collaboration"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/RocketChat/Rocket.Chat.Artwork/refs/heads/master/Logos/logo-rectangle.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/rocketchat/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "ROCKETCHAT_URL",
+          "label": "Rocket.Chat URL",
+          "description": "Full URL where Rocket.Chat will be accessible (e.g., https://chat.yourdomain.com)",
+          "default": "http://localhost:3000"
+        },
+        {
+          "name": "ADMIN_USERNAME",
+          "label": "Admin Username",
+          "description": "Username for the initial admin account",
+          "default": "admin"
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Admin Password",
+          "description": "Password for the initial admin account",
+          "default": ""
+        },
+        {
+          "name": "ADMIN_EMAIL",
+          "label": "Admin Email",
+          "description": "Email address for the initial admin account",
+          "default": ""
+        }
+      ],
+      "id": 20
+    },
+    {
+      "type": 3,
+      "title": "Supabase",
+      "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+      "note": "Deploys with your own variables. You can see what variable do in this <a href=\"https://supabase.com/docs/guides/self-hosting/docker\" target=\"_blank\" rel=\"noopener noreferrer\">Docs</a></a>",
+      "categories": [
+        "Database",
+        "Automation"
+      ],
+      "platform": "linux",
+      "logo": "https://avatars.githubusercontent.com/u/54469796?s=100&v=4",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/supabase/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "JWT_SECRET",
+          "label": "You need to generate secure keys for accessing your services (See Docs)",
+          "description": "You need to generate secure keys for accessing your services. We'll use the JWT Secret to generate anon and service API keys using the form from Docs.",
+          "default": "ocIDzOJN5wNS2G7iDBtTe4geZZQn4wrNndepFAx7"
+        },
+        {
+          "name": "ANON_KEY",
+          "label": "You need to generate secure keys for accessing your services (See Docs)",
+          "description": "You need to generate secure keys for accessing your services. We'll use the JWT Secret to generate anon and service API keys using the form from Docs.",
+          "default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzU1NTUwODAwLCJleHAiOjE5MTMzMTcyMDB9.-tJEYSwXD5h9O_Q7PHJmJW6KfKhtmjKgppGLGJBheUE"
+        },
+        {
+          "name": "SERVICE_ROLE_KEY",
+          "label": "You need to generate secure keys for accessing your services (See Docs)",
+          "description": "You need to generate secure keys for accessing your services. We'll use the JWT Secret to generate anon and service API keys using the form from Docs.",
+          "default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoic3VwYWJhc2UiLCJpYXQiOjE3NTU1NTA4MDAsImV4cCI6MTkxMzMxNzIwMH0.fu-vIeRk4zITKUmK2QxoczBTCbLeqy4fUs6j_IWGgTg"
+        },
+        {
+          "name": "DASHBOARD_USERNAME",
+          "label": "Dashboard Basic Auth Username",
+          "description": "The Dashboard is protected with basic authentication. The default user and password MUST be updated before using Supabase in production.",
+          "default": "supabase"
+        },
+        {
+          "name": "DASHBOARD_PASSWORD",
+          "label": "Dashboard Basic Auth Password",
+          "description": "The Dashboard is protected with basic authentication. The default user and password MUST be updated before using Supabase in production.",
+          "default": "iIy1Va8eI1gTbrgfsAIuUhUXkqe0MzYr"
+        },
+        {
+          "name": "SECRET_KEY_BASE",
+          "label": "Phoenix secure key. It should look like a long base64-encoded string (openssl rand -base64 64)",
+          "description": "SECRET_KEY_BASE is required for Phoenix to work securely.",
+          "default": "UpNVntn3cDxHJpq99YMc1T1AQgQpc8kfYTuRgBiYa15BLrx8etQoXz3gZv1/u2oq"
+        },
+        {
+          "name": "VAULT_ENC_KEY",
+          "label": "Encription Key for your Vault like HashiCorp,Secrets Manager by AWS, etc.",
+          "description": "Many components inside Supabase use secure secrets and passwords. These are Vault Key to connect to vault like HashiCorp,Secrets Manager by AWS, etc.",
+          "default": "iIy1Va8eI1gTbrgfsAIuUhUXkqe0MzYr"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "PostgreSQL Root Password",
+          "description": "PostgreSQL Root Password",
+          "default": "iIy1Va8eI1gTbrgfsAIuUhUXkqe0MzYr"
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "PostgreSQL Database Name",
+          "description": "PostgreSQL Database Name",
+          "default": "postgres"
+        },
+        {
+          "name": "POOLER_DEFAULT_POOL_SIZE",
+          "label": "Default number of connections per pool",
+          "description": "Default number of connections per pool",
+          "default": "20"
+        },
+        {
+          "name": "POOLER_MAX_CLIENT_CONN",
+          "label": "Max Client Connections",
+          "description": "Maximum number of client connections allowed",
+          "default": "100"
+        },
+        {
+          "name": "POOLER_TENANT_ID",
+          "label": "Tenant ID",
+          "description": "Unique identifier for tenant",
+          "default": "your-tenant-id"
+        },
+        {
+          "name": "POOLER_DB_POOL_SIZE",
+          "label": "Database connection pool size",
+          "description": "Database connection pool size",
+          "default": "5"
+        },
+        {
+          "name": "PGRST_DB_SCHEMAS",
+          "label": "PostgREST DB Schemas",
+          "description": "Comma-separated list of DB schemas used by PostgREST",
+          "default": "public,storage,graphql_public"
+        },
+        {
+          "name": "SITE_URL",
+          "label": "Site URL",
+          "description": "URL of the hosted site",
+          "default": "http://localhost:3000"
+        },
+        {
+          "name": "ADDITIONAL_REDIRECT_URLS",
+          "label": "Additional Redirect URLs",
+          "description": "Extra URLs for redirection during auth flows",
+          "default": ""
+        },
+        {
+          "name": "JWT_EXPIRY",
+          "label": "JWT Expiry",
+          "description": "Token expiration time in seconds",
+          "default": "3600"
+        },
+        {
+          "name": "DISABLE_SIGNUP",
+          "label": "Disable Signup",
+          "description": "Disable user signups if true",
+          "default": "false"
+        },
+        {
+          "name": "API_EXTERNAL_URL",
+          "label": "API External URL",
+          "description": "Base URL of the external API",
+          "default": "http://localhost:8000"
+        },
+        {
+          "name": "MAILER_URLPATHS_CONFIRMATION",
+          "label": "Mailer Confirmation Path",
+          "description": "Path for confirmation emails",
+          "default": "/auth/v1/verify"
+        },
+        {
+          "name": "MAILER_URLPATHS_INVITE",
+          "label": "Mailer Invite Path",
+          "description": "Path for invite emails",
+          "default": "/auth/v1/verify"
+        },
+        {
+          "name": "MAILER_URLPATHS_RECOVERY",
+          "label": "Mailer Recovery Path",
+          "description": "Path for recovery emails",
+          "default": "/auth/v1/verify"
+        },
+        {
+          "name": "MAILER_URLPATHS_EMAIL_CHANGE",
+          "label": "Mailer Email Change Path",
+          "description": "Path for email change verification",
+          "default": "/auth/v1/verify"
+        },
+        {
+          "name": "ENABLE_EMAIL_SIGNUP",
+          "label": "Enable Email Signup",
+          "description": "Allow users to sign up using email",
+          "default": "true"
+        },
+        {
+          "name": "ENABLE_EMAIL_AUTOCONFIRM",
+          "label": "Email Auto Confirm",
+          "description": "Automatically confirm email signups",
+          "default": "false"
+        },
+        {
+          "name": "SMTP_ADMIN_EMAIL",
+          "label": "SMTP Admin Email",
+          "description": "Email address of the SMTP admin",
+          "default": "admin@example.com"
+        },
+        {
+          "name": "SMTP_HOST",
+          "label": "SMTP Host",
+          "description": "SMTP server hostname",
+          "default": "supabase-mail"
+        },
+        {
+          "name": "SMTP_PORT",
+          "label": "SMTP Port",
+          "description": "SMTP server port",
+          "default": "2500"
+        },
+        {
+          "name": "SMTP_USER",
+          "label": "SMTP Username",
+          "description": "SMTP authentication username",
+          "default": "fake_mail_user"
+        },
+        {
+          "name": "SMTP_PASS",
+          "label": "SMTP Password",
+          "description": "SMTP authentication password",
+          "default": "fake_mail_password"
+        },
+        {
+          "name": "SMTP_SENDER_NAME",
+          "label": "SMTP Sender Name",
+          "description": "Name shown as sender in emails",
+          "default": "fake_sender"
+        },
+        {
+          "name": "ENABLE_ANONYMOUS_USERS",
+          "label": "Enable Anonymous Users",
+          "description": "Allow anonymous user sessions",
+          "default": "false"
+        },
+        {
+          "name": "ENABLE_PHONE_SIGNUP",
+          "label": "Enable Phone Signup",
+          "description": "Allow users to sign up using phone numbers",
+          "default": "false"
+        },
+        {
+          "name": "ENABLE_PHONE_AUTOCONFIRM",
+          "label": "Phone Auto Confirm",
+          "description": "Automatically confirm phone signups",
+          "default": "true"
+        },
+        {
+          "name": "STUDIO_DEFAULT_ORGANIZATION",
+          "label": "Studio Default Organization",
+          "description": "Default organization name for Studio",
+          "default": "Default Organization"
+        },
+        {
+          "name": "STUDIO_DEFAULT_PROJECT",
+          "label": "Studio Default Project",
+          "description": "Default project name for Studio",
+          "default": "Default Project"
+        },
+        {
+          "name": "STUDIO_PORT",
+          "label": "Studio Port",
+          "description": "Port on which Studio runs",
+          "default": "3000"
+        },
+        {
+          "name": "SUPABASE_PUBLIC_URL",
+          "label": "Supabase Public URL",
+          "description": "Publicly accessible URL for Supabase",
+          "default": "http://localhost:8000"
+        },
+        {
+          "name": "IMGPROXY_ENABLE_WEBP_DETECTION",
+          "label": "Enable WebP Detection",
+          "description": "Detect and serve WebP images if supported",
+          "default": "true"
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "label": "OpenAI API Key",
+          "description": "API key used for OpenAI integration",
+          "default": ""
+        },
+        {
+          "name": "FUNCTIONS_VERIFY_JWT",
+          "label": "Verify JWT in Functions",
+          "description": "Enable JWT verification in Supabase functions",
+          "default": "false"
+        },
+        {
+          "name": "LOGFLARE_PUBLIC_ACCESS_TOKEN",
+          "label": "Logflare Public Token",
+          "description": "Public token for Logflare logging",
+          "default": "your-super-secret-and-long-logflare-key-public"
+        },
+        {
+          "name": "LOGFLARE_PRIVATE_ACCESS_TOKEN",
+          "label": "Logflare Private Token",
+          "description": "Private token for Logflare logging",
+          "default": "your-super-secret-and-long-logflare-key-private"
+        },
+        {
+          "name": "DOCKER_SOCKET_LOCATION",
+          "label": "Docker Socket Location",
+          "description": "Path to the Docker socket",
+          "default": "/var/run/docker.sock"
+        },
+        {
+          "name": "GOOGLE_PROJECT_ID",
+          "label": "Google Project ID",
+          "description": "ID of the Google Cloud project",
+          "default": "GOOGLE_PROJECT_ID"
+        },
+        {
+          "name": "GOOGLE_PROJECT_NUMBER",
+          "label": "Google Project Number",
+          "description": "Number of the Google Cloud project",
+          "default": "GOOGLE_PROJECT_NUMBER"
+        }
+      ],
+      "id": 21
+    },
+    {
+      "type": 3,
+      "title": "Traefik Reverse Proxy",
+      "description": "Modern HTTP reverse proxy with automatic HTTPS and web dashboard.",
+      "note": "Deploys Traefik with web dashboard. Exposes ports 80, 443, and 8080. Automatically handles SSL certificates via Let's Encrypt. Dashboard accessible on port 8080 or via domain. <a href='https://doc.traefik.io/traefik/providers/docker/' target='_blank' rel='noopener noreferrer'>Docs for Docker</a>",
+      "categories": [
+        "Proxy",
+        "Networking"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Traefik_Logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/traefik/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "ACME_EMAIL",
+          "label": "ACME Email",
+          "description": "Email address for Let's Encrypt certificate registration",
+          "default": ""
+        },
+        {
+          "name": "TRAEFIK_DOMAIN",
+          "label": "Traefik Dashboard Domain (Optional)",
+          "description": "Domain for accessing Traefik dashboard with HTTPS (e.g., traefik.yourdomain.com)",
+          "default": ""
+        }
+      ],
+      "id": 22
+    },
+    {
+      "type": 3,
+      "title": "WireGuard VPN (wg-easy)",
+      "description": "WireGuard VPN server with a simple Web UI for managing peers.",
+      "note": "Deploys wg-easy with admin credentials, domain and port defined at startup.<br><br><strong>Requirements:</strong><br>&nbsp;&nbsp;- <code>WG_ADMIN_PASS</code> must be at least <strong>12 characters</strong> long.<br><br><a href=\"https://github.com/wg-easy/wg-easy\" target=\"_blank\" rel=\"noopener noreferrer\">Project Docs</a>",
+      "categories": [
+        "VPN",
+        "Security"
+      ],
+      "platform": "linux",
+      "logo": "https://wg-easy.github.io/wg-easy/latest/assets/logo/logo.png",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/wg-easy/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "WG_HOST",
+          "label": "Public Host/IP",
+          "description": "Domain or IP address clients connect to",
+          "default": ""
+        },
+        {
+          "name": "WG_ADMIN_USER",
+          "label": "Admin Username",
+          "description": "Username for Web UI admin login",
+          "default": "admin"
+        },
+        {
+          "name": "WG_ADMIN_PASS",
+          "label": "Admin Password",
+          "description": "Password for Web UI admin login",
+          "default": ""
+        },
+        {
+          "name": "WG_PORT",
+          "label": "WireGuard UDP Port",
+          "description": "Port WireGuard will listen on",
+          "default": "51820"
+        }
+      ],
+      "id": 23
+    },
+    {
+      "type": 3,
+      "title": "WordPress",
+      "description": "WordPress content management system.",
+      "note": "Deploys WordPress. Requires an existing database server on shared-network. Configure database user and database create with phpMyAdmin. <a href='https://wordpress.org/documentation/' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Docs</a>",
+      "categories": [
+        "CMS",
+        "Blog"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/wordpress/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "WORDPRESS_DB_HOST",
+          "label": "Database Host",
+          "description": "Database server hostname",
+          "default": "mariadb"
+        },
+        {
+          "name": "WORDPRESS_DB_NAME",
+          "label": "Database Name (create in PHPMyAdmin)",
+          "description": "Name of the WordPress database",
+          "default": "wordpress"
+        },
+        {
+          "name": "WORDPRESS_DB_USER",
+          "label": "Database User (create in PHPMyAdmin)",
+          "description": "Username for the WordPress database",
+          "default": "wordpress"
+        },
+        {
+          "name": "WORDPRESS_DB_PASSWORD",
+          "label": "Database Password",
+          "description": "Password for the WordPress database user",
+          "default": ""
+        }
+      ],
+      "id": 24
+    },
+    {
+      "type": 3,
+      "title": "Zabbix",
+      "description": "Monitor everysing - the cloud, networks, services, IoT, and more",
+      "note": "Monitor everything - the cloud, networks, services, IoT, and more  <a href='https://www.zabbix.com/community' target='_blank' rel='noopener noreferrer'target='_blank' rel='noopener noreferrer'>Community</a>",
+      "categories": [
+        "Automation",
+        "Monitoring"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Zabbix_logo.svg",
+      "repository": {
+        "url": "https://screen.unihost.com/portainer/.git/",
+        "stackfile": "stacks/zabbix/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "ZABBIX_FRONTEND_PORT",
+          "label": "Port for web interface",
+          "description": "Port for web interface",
+          "default": "8080"
+        },
+        {
+          "name": "PHP_TZ",
+          "label": "Time Zone",
+          "description": "Time Zone",
+          "default": "Europe/Kyiv"
+        },
+        {
+          "name": "MYSQL_DB",
+          "label": "Database Name (create automatically)",
+          "description": "Name of the Zabbix database",
+          "default": "zabbix"
+        },
+        {
+          "name": "MYSQL_USER",
+          "label": "Database User (create automatically)",
+          "description": "Username for the Zabbix database",
+          "default": "zabbix"
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "label": "Database Password",
+          "description": "Password for the Zabbix database user",
+          "default": ""
+        },
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "label": "Database Root Password",
+          "description": "Root password for the Mysql database user",
+          "default": ""
+        }
+      ],
+      "id": 25
+    }
+  ]
+}
